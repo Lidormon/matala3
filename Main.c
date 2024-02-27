@@ -1,12 +1,14 @@
-#include "StrList.h"
 #include <stdio.h>
-#include <string.h> // Include this header for strtok
+#include <string.h>
+#include <stdlib.h>
+#include "StrList.h"
 
 int main()
 {
     StrList *head = StrList_alloc();
     int choice = 0;
     int index = 0;
+    char *story = NULL;
     char inputString[100];
     int firstTimeFlag = 1;
     int Flag = 1;
@@ -19,29 +21,21 @@ int main()
         switch (choice)
         {
         case 1:
-            scanf("%d", &index);
-            scanf(" %[^\n]", inputString); // Reads the whole line including spaces
-            char *token = strtok(inputString, " "); // Tokenize the string by space
-
-            for (int i = 0; i < index; i++)
-            {
-                StrList_insertLast(head, token);
-                // Move to the next token
-                token = strtok(NULL, " ");
-            }
-
-            break;
+            scanf(" %d", &index);
+                for (int i = 0; i < index; i++) {
+                    story = (char*)malloc(100 * sizeof(char));
+                    scanf(" %s", story);
+                    StrList_insertLast(head, story);
+                }
+                break;
         
 
         case 2:
-            // printf("Enter index: ");
-            scanf("%d", &index);
-            
-            // printf("Enter string: ");
-            scanf("%s", inputString);
-           
-            StrList_insertAt(head, inputString, index);
-            break;
+            scanf(" %d", &index);
+                story = (char*)malloc(100 * sizeof(char));
+                scanf("%s", story);
+                StrList_insertAt(head, story, index);
+                break;
 
         case 3:
             // printf("List: ");
@@ -129,9 +123,9 @@ int main()
         }
         
     }
-    if(flag_list_is_free == 0){
+
         StrList_free(head);
-    } 
+   
     
     return 0;
 }
