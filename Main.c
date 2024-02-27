@@ -39,7 +39,8 @@ int main()
             for (int i = 0; i < index; i++)
             {
                 StrList_insertLast(head, token);
-                token = strtok(NULL, " "); // Move to the next token
+                char* str;
+                token = strtok(str, " "); // Move to the next token
             }
             
 
