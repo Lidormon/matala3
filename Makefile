@@ -1,19 +1,20 @@
-CC=gcc
-CFLAGS= -Wall 
-AR=ar
-all: Main
-#----------------------------------
-StrList: Main.o  
-	$(CC) $(CFLAGS) -o StrList Main.o 
-#--------------------------------
-# libmat.a: StrList.o
-# 	$(AR) -rcs libmat.a StrList.o 
-StrList.o: StrList.c StrList.h 
-	$(CC) $(CFLAGS) -c StrList.c -o StrList.o
-Main.o: Main.c StrList.h 
-	$(CC) $(CFLAGS) -c Main.c -o Main.o
+all: StrList
 
-#--------------------------
-.PHONY: clean all
+StrList: StrList.a
+	gcc -Wall -g Main.o StrList.o -o StrList
+
+StrList.a: Main.o StrList.o
+	ar -rcs StrList.a Main.o StrList.o
+
+Main.o: Main.c StrList.h
+	gcc -Wall -g -c Main.c
+
+StrList.o: StrList.c StrList.h
+	gcc -Wall -g -c StrList.c
+
+
+
+.PHONY: all clean
+
 clean:
-	rm -f *.o  Main
+	rm -f *.o StrList *.a
