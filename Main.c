@@ -8,8 +8,10 @@ int main()
     int choice, index;
     char inputString[100];
     int firstTimeFlag = 1;
-    do
-    {
+    int Flag = 1; 
+   
+    while (Flag) {
+    
         scanf("%d", &choice);
 
         switch (choice)
@@ -115,7 +117,7 @@ int main()
             break;
 
         case 0:
-           printf("\n");
+           Flag = 0;
            break;
 
         default:
@@ -123,7 +125,7 @@ int main()
             break;
         }
         
-    } while (choice != 0);
+    } 
     
     return 0;
 }
