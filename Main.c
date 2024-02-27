@@ -39,7 +39,13 @@ int main()
 
         case 3:
             // printf("List: ");
-             StrList_print(head);
+            if(flag_list_is_free == 1){
+            printf("\n");
+            }
+            else{
+            StrList_print(head);
+            }
+             
                
             break;
 
@@ -123,3 +129,4 @@ int main()
     
     return 0;
 }
+
