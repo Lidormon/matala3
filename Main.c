@@ -27,7 +27,7 @@ int main()
             }
 
             break;
-        }
+        
 
         case 2:
             // printf("Enter index: ");
