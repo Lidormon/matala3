@@ -3,8 +3,8 @@ CFLAGS= -Wall
 AR=ar
 all: Main
 #----------------------------------
-Main: Main.o  
-	$(CC) $(CFLAGS) -o Main Main.o 
+StrList: Main.o  
+	$(CC) $(CFLAGS) -o StrList Main.o 
 #--------------------------------
 # libmat.a: StrList.o
 # 	$(AR) -rcs libmat.a StrList.o 
