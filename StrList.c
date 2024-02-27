@@ -109,8 +109,9 @@ char* StrList_firstData(const StrList* StrList) {
 // Prints the StrList to the standard output
 void StrList_print(const StrList* StrList) {
     struct Node *current = StrList->head;
+    printf("%s", current->data);
     while (current != NULL) {
-        printf("%s ", current->data);
+        printf(" %s", current->data);
         current = current->next;
     }
     printf("\n");
