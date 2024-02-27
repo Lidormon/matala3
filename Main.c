@@ -10,7 +10,7 @@ int main()
     int index = 0;
     char *story = NULL;
     char inputString[100];
-    int firstTimeFlag = 1;
+   
     int Flag = 1;
     int flag_list_is_free = 0;
    
@@ -39,14 +39,8 @@ int main()
 
         case 3:
             // printf("List: ");
-             if (firstTimeFlag) {
-                printf("\n");
-                StrList_print(head);
-                firstTimeFlag = 0; // Set the flag to indicate it's not the first time anymore
-            } else {
-                StrList_print(head);
-            }
-           
+             StrList_print(head);
+               
             break;
 
         case 4:
