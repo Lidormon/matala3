@@ -130,7 +130,7 @@ int main()
         
     }
     if(flag_list_is_free == 0){
-        free(head);
+        StrList_free(head);
     } 
     
     return 0;
