@@ -5,10 +5,12 @@
 int main()
 {
     StrList *head = StrList_alloc();
-    int choice, index;
+    int choice = 0;
+    int index = 0;
     char inputString[100];
     int firstTimeFlag = 1;
-    int Flag = 1; 
+    int Flag = 1;
+    int flag_list_is_free = 0;
    
     while (Flag) {
     
@@ -95,6 +97,7 @@ int main()
             break;
 
         case 11:
+            flag_list_is_free = 1;	
             StrList_free(head);
             // printf("List deleted.\n");
             break;
@@ -124,6 +127,14 @@ int main()
             printf("Invalid choice. Please try again.\n");
             break;
         }
+        
+    }
+    if(flag_list_is_free == 0){
+        free(head);
+    } 
+    
+    return 0;
+}
         
     } 
     
