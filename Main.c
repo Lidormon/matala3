@@ -1,5 +1,5 @@
 #include "StrList.h"
-
+#include <stdio.h>
 int main()
 {
     StrList *head = StrList_alloc();
