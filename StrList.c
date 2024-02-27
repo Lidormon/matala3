@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "StrList.h"
 
 // Node structure for the linked list
 struct Node {
