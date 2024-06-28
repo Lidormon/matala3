@@ -306,3 +306,10 @@ int StrList_isSorted(StrList* StrList) {
     }
     return 1; // Sorted
 }
+// Function to free the memory allocated for a node
+void freeNode(struct Node *node) {
+    if (node != NULL) {
+        free(node->data); // Free the memory allocated for the data
+        free(node); // Free the memory allocated for the node itself
+    }
+}
