@@ -36,13 +36,14 @@ void StrList_free(StrList* StrList) {
     struct Node *next;
 
     while (current != NULL) {
-        next = current->next;
+         next = current->next;
         free(current->data);
         free(current);
         current = next;
     }
 
     StrList->head = NULL; // Set the head to NULL after emptying the list
+    free(StrList);
 }
 
 

@@ -26,7 +26,9 @@ int main()
                     story = (char*)malloc(100 * sizeof(char));
                     scanf(" %s", story);
                     StrList_insertLast(head, story);
+                    free(story);
                 }
+            
                 break;
         
 
@@ -35,8 +37,9 @@ int main()
                 story = (char*)malloc(100 * sizeof(char));
                 scanf("%s", story);
                 StrList_insertAt(head, story, index);
+                 free(story);
                 break;
-
+ 
         case 3:
             // printf("List: ");
             if(flag_list_is_free == 1){
@@ -125,7 +128,7 @@ int main()
     }
 
         StrList_free(head);
-   
+       
     
     return 0;
 }
